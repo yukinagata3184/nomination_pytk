@@ -1,0 +1,6 @@
+# Don't include folders generated from program execution.
+.pytest_cache/
+__pycache__/
+
+# Don't include folders generated from Doxygen.
+doc_by_doxygen/
