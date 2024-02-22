@@ -31,3 +31,16 @@ class MkGUI:
         """
         self.img = tkinter.PhotoImage(file=img_path)
         self.canvas.create_image(x_axis, y_axis, image=self.img)
+
+    def place_label(self, text="???", font="Times New Roman", font_size=70,
+                        bg_color="white", x_axis=300, y_axis=75):
+        """! Place the text on the canvas.
+        @param text [str] Text to be displayed on the label.
+        @param font [str] Font of the text to be displayed on the label.
+        @param font_size [int] Font size of the text to be displayed on the label.
+        @param bg_color [str] Background color of the text to be displayed on the label.
+        @param x_axis [int] x-axis of the label.
+        @param y_axis [int] y-axis of the label.
+        """
+        self.label = tkinter.Label(self.root, text=text, font=(font, font_size), bg=bg_color)
+        self.label.place(x=x_axis, y=y_axis)
