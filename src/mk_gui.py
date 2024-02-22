@@ -44,3 +44,16 @@ class MkGUI:
         """
         self.label = tkinter.Label(self.root, text=text, font=(font, font_size), bg=bg_color)
         self.label.place(x=x_axis, y=y_axis)
+    
+    def place_button(self, text="Button", font="Times New Roman", font_size=36,
+                     text_color="blue", x_axis=300, y_axis=230):
+        """! Place the button on the canvas.
+        @param text [str] Text to be displayed on the button.
+        @param font [str] The font of the text to be displayed on the button.
+        @param font_size [int] The font size of the text to be displayed on the button.
+        @param text_color [str] The text color on the button.
+        @param x_axis [int] x-axis of the button.
+        @param y_axis [int] y-axis of the button.
+        """
+        button = tkinter.Button(self.root, text=text, font=(font, font_size), fg=text_color)
+        button.place(x=x_axis, y=y_axis)
