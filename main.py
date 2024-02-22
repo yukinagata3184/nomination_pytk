@@ -15,6 +15,10 @@ def main():
                     bg_color="#f0f0f0", x_axis=300, y_axis=0)
     gui.place_label(text="？？？", font="Times New Roman", font_size=70,
                         bg_color="white", x_axis=300, y_axis=75)
+    gui.place_button(text="指名", font="Times New Roman", font_size=36, 
+                     text_color="blue", x_axis=300, y_axis=230)
+    gui.place_button(text="リセット", font="Times New Roman", font_size=36, 
+                     text_color="blue", x_axis=500, y_axis=230)
     gui.root.mainloop()
 
 if __name__ == "__main__":
