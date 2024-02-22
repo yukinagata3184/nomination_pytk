@@ -11,6 +11,7 @@ def main():
     """
     gui = MkGUI()
     gui.mk_canvas(title="nomination", is_resize=False, width=1000, height=600)
+    gui.place_img(img_path="img/teacher_india_man.png", x_axis=150, y_axis=250)
     gui.root.mainloop()
 
 if __name__ == "__main__":
