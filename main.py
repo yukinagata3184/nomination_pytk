@@ -9,8 +9,7 @@ def main():
     """! main function of the nomination app.
     Running this file will run the nomination app.
     """
-    gui = MkGUI()
-    gui.mk_canvas(title="nomination", is_resize=False, width=1000, height=600)
+    gui = MkGUI(title="nomination", is_resize=False, width=1000, height=600)
     gui.place_img(img_path="img/teacher_india_man.png", x_axis=150, y_axis=250)
     gui.root.mainloop()
 
