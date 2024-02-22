@@ -26,3 +26,12 @@ class MkGUI:
         self.root.resizable(is_resize, is_resize)
         self.canvas = tkinter.Canvas(self.root, width=width, height=height)
         self.canvas.pack()
+    
+    def place_img(self, img_path="img/teacher_india_man.png", x_axis=150, y_axis=250):
+        """! Place the image on the canvas.
+        @param img_path [str] The path to the image to be displayed.
+        @param x-axis [int] x-axis of the image.
+        @param y-axis [int] y-axis of the image.
+        """
+        self.img = tkinter.PhotoImage(file=img_path)
+        self.canvas.create_image(x_axis, y_axis, image=self.img)
