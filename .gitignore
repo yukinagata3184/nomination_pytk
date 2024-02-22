@@ -2,5 +2,8 @@
 .pytest_cache/
 __pycache__/
 
+# Don't include folders debug result.
+doc/debug/
+
 # Don't include folders generated from Doxygen.
 doc_by_doxygen/
