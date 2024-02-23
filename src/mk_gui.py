@@ -44,9 +44,10 @@ class MkGUI:
         """
         self.label = tkinter.Label(self.root, text=text, font=(font, font_size), bg=bg_color)
         self.label.place(x=x_axis, y=y_axis)
-    
+
     def place_button(self, text="Button", font="Times New Roman", font_size=36,
-                     text_color="blue", x_axis=300, y_axis=230):
+                     text_color="blue", x_axis=300, y_axis=230,
+                     action_button_click=None):
         """! Place the button on the canvas.
         @param text [str] Text to be displayed on the button.
         @param font [str] The font of the text to be displayed on the button.
@@ -55,5 +56,30 @@ class MkGUI:
         @param x_axis [int] x-axis of the button.
         @param y_axis [int] y-axis of the button.
         """
-        button = tkinter.Button(self.root, text=text, font=(font, font_size), fg=text_color)
+        button = tkinter.Button(self.root, text=text, font=(font, font_size), fg=text_color,
+                                command=action_button_click)
         button.place(x=x_axis, y=y_axis)
+
+    def get_list(self, get_list=[]):
+        """! Get list in instance variable for use other methods.
+        @param get_list [list] Get list in instance variable.
+        """
+        self.get_list = get_list
+        self.selected_get_list = []
+
+    def action_nominate_button_click(self, finish_txt="終了",
+                                     front_honorific="", after_honorific="さん"):
+        """! Nominate when the button is clicked.
+        @param finish_txt [str] The text to be displayed after finished nominating everyone.
+        @param front_honorific [str] The honorific title front of name.
+        @param after_honorific [str] The honorific title after of name.
+        """
+        element_num = len(self.get_list)
+        if element_num == 0:
+            self.label["text"] = finish_txt
+        else:
+            element_choice = random.choice(list(range(0, element_num, 1)))
+            popped_name = self.get_list.pop(element_choice)
+            self.label["text"] = front_honorific + popped_name + after_honorific
+            self.selected_get_list.append(popped_name)
+        self.label.update()
