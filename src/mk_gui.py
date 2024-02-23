@@ -32,7 +32,7 @@ class MkGUI:
         self.img = tkinter.PhotoImage(file=img_path)
         self.canvas.create_image(x_axis, y_axis, image=self.img)
 
-    def place_label(self, text="???", font="Times New Roman", font_size=70,
+    def place_label(self, text="？？？", font="Times New Roman", font_size=70,
                         bg_color="white", x_axis=300, y_axis=75):
         """! Place the text on the canvas.
         @param text [str] Text to be displayed on the label.
@@ -55,6 +55,7 @@ class MkGUI:
         @param text_color [str] The text color on the button.
         @param x_axis [int] x-axis of the button.
         @param y_axis [int] y-axis of the button.
+        @param action_button_click [func] Action when button clicked.
         """
         button = tkinter.Button(self.root, text=text, font=(font, font_size), fg=text_color,
                                 command=action_button_click)
@@ -83,3 +84,12 @@ class MkGUI:
             self.label["text"] = front_honorific + popped_name + after_honorific
             self.selected_get_list.append(popped_name)
         self.label.update()
+
+    def action_reset_button_click(self, text_after_reset="？？？"):
+        """! Reset when the button is clicked.
+        @param text_after_reset The text to display after clicking the reset button.
+        """
+        for i in self.selected_get_list:
+            self.get_list.append(i)
+        self.selected_get_list = []
+        self.label["text"] = text_after_reset
