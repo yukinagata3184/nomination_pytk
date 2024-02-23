@@ -17,9 +17,11 @@ class MkGUI:
         @param width [int] Window width.
         @param height [int] Window height.
         """
+        ## tkinter.Tk() instance
         self.root = tkinter.Tk()
         self.root.title(title)
         self.root.resizable(is_resize, is_resize)
+        ## tkinter.Canvas() instance
         self.canvas = tkinter.Canvas(self.root, width=width, height=height)
         self.canvas.pack()
     
@@ -29,6 +31,7 @@ class MkGUI:
         @param x-axis [int] x-axis of the image.
         @param y-axis [int] y-axis of the image.
         """
+        ## Place the image on the canvas.
         self.img = tkinter.PhotoImage(file=img_path)
         self.canvas.create_image(x_axis, y_axis, image=self.img)
 
@@ -42,6 +45,7 @@ class MkGUI:
         @param x_axis [int] x-axis of the label.
         @param y_axis [int] y-axis of the label.
         """
+        ## Place the text on the canvas.
         self.label = tkinter.Label(self.root, text=text, font=(font, font_size), bg=bg_color)
         self.label.place(x=x_axis, y=y_axis)
 
@@ -57,6 +61,7 @@ class MkGUI:
         @param y_axis [int] y-axis of the button.
         @param action_button_click [func] Action when button clicked.
         """
+        ## Place the button on the canvas.
         button = tkinter.Button(self.root, text=text, font=(font, font_size), fg=text_color,
                                 command=action_button_click)
         button.place(x=x_axis, y=y_axis)
@@ -65,7 +70,9 @@ class MkGUI:
         """! Get list in instance variable for use other methods.
         @param get_list [list] Get list in instance variable.
         """
+        ## list for use other methods.
         self.get_list = get_list
+        ## list to append elements popped from get_list.
         self.selected_get_list = []
 
     def action_nominate_button_click(self, finish_txt="終了",
