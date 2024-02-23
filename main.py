@@ -22,7 +22,8 @@ def main():
                      text_color="blue", x_axis=300, y_axis=230,
                      action_button_click=gui.action_nominate_button_click)
     gui.place_button(text="リセット", font="Times New Roman", font_size=36, 
-                     text_color="blue", x_axis=500, y_axis=230)
+                     text_color="blue", x_axis=500, y_axis=230,
+                     action_button_click=gui.action_reset_button_click)
     gui.root.mainloop()
 
 if __name__ == "__main__":
